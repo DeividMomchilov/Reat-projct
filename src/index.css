@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Registration Form Pretty Animation Enhancements */
+
+.register-form-animate {
+  animation: formPopIn 0.85s cubic-bezier(.81,-0.15,.43,1.26);
+}
+
+@keyframes formPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(36px);
+    box-shadow: none;
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.025) translateY(-6px);
+    box-shadow: 0 8px 24px 1px rgba(13,80,81,0.18);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+    box-shadow: 0 4px 14px 0px rgba(19,130,130,0.09);
+  }
+}
+
+.register-form-animate input[type="text"],
+.register-form-animate input[type="email"],
+.register-form-animate input[type="password"],
+.register-form-animate select {
+  transition: box-shadow 0.25s, transform 0.17s cubic-bezier(.37,.87,.33,1.03), border-color 0.20s;
+}
+
+.register-form-animate input:focus,
+.register-form-animate select:focus {
+  transform: scale(1.035);
+  box-shadow: 0 0 0 3px rgba(20,184,166,0.15);
+  border-color: #14b8a6 !important;
+}
+
+.register-form-animate button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s, transform 0.15s cubic-bezier(.37,.87,.33,1.03);
+}
+
+.register-form-animate button[type="submit"]:hover {
+  background: linear-gradient(90deg, #14b8a6 0%, #0891b2 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.register-form-animate button[type="submit"]::after {
+  content: "";
+  position: absolute;
+  left: -60%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(112deg,rgba(255,255,255,0.07) 70%,transparent 100%);
+  transform: skewX(-23deg);
+  transition: left 0.5s cubic-bezier(.37,.87,.33,1.03);
+}
+
+.register-form-animate button[type="submit"]:hover::after {
+  left: 120%;
+}
